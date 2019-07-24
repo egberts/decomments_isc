@@ -1,0 +1,22 @@
+first statement;
+// C++-style comment
+# Bash-style comment
+/* C-style comment */
+/*
+    multi-line C-style comment
+*/
+/*
+    multi-line nested multiple style comments
+    # This too should be commented out but not disruptive to C++-style comment  */
+
+
+second statement  ;   # comment
+third statement; // C++-style
+fourth statement; /* C-style */
+fifth /* C-style comment */ statement;
+sixth /*
+C-style comment // comments  */ statement;
+  seventh statement     ;  # comment //
+  eighth statement  ; //  /* comment */  # comment
+
+
