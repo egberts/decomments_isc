@@ -20,6 +20,7 @@ def isc_comments_blanker(textdata):
                 state_csc = True
                 state_cxxsc = True
                 # might need to backtrack and erase a char, later.
+                newdata = newdata + i
             elif i == '#':
                 state_ssc = True
                 newdata = newdata + ' '
@@ -88,14 +89,21 @@ if __name__ == "__main__":
     # Creating parser from parser model.
     #     parser = ParserPython(iscFile, debug=debug)
 
-    # Load test JSON file
-    current_dir = os.path.dirname(__file__)
-    testdata = open(os.path.join(current_dir, '../test/test.isc')).read()
+    testdata=""
+    if False:
+        # Load test JSON file
+        current_dir = os.path.dirname(__file__)
+        testdata = open(os.path.join(current_dir, '../test/test.isc')).read()
 
-    print("testdata: ", testdata)
+        print("testdata: ", testdata)
 
-    testdata = isc_comments_blanker(testdata)
+        testdata = isc_comments_blanker(testdata)
 
-    print("testdata: ", testdata)
+    test1 = """
+    include a-b/c/d/e/f/g.conf;
+    """
+    test1s = isc_comments_blanker(test1)
+
+    print("result: ", testdata)
 
     exit(0)
